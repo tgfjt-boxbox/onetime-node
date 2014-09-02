@@ -1,0 +1,23 @@
+{
+  "name": "onetime-node",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "test": "NODE_ENV=test ./node_modules/.bin/mocha --reporter nyan --require should tests/*.js"
+  },
+  "author": "tgfjt",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^0.8.0",
+    "express": "^4.8.7",
+    "ejs": "^1.0.0",
+    "express-session": "^1.7.6"
+  },
+  "devDependencies": {
+    "mocha": "^1.21.4",
+    "should": "^4.0.4",
+    "supertest": "^0.13.0"
+  }
+}
