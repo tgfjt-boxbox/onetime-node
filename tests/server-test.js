@@ -7,8 +7,6 @@ var should = require('should');
 var token;
 
 
-
-
 describe('toppage', function() {
 	describe('when GET /', function() {
 		it('should return the toppage', function(done) {
@@ -27,7 +25,6 @@ describe('toppage', function() {
 		});
 	});
 });
-
 
 describe('demo/$token', function() {
 	describe('with invalid token', function() {
@@ -62,7 +59,6 @@ describe('demo/$token', function() {
 		});
 	});
 });
-
 
 describe('demo', function() {
 	describe('when GET /demo', function() {
