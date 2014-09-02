@@ -24,7 +24,7 @@ app.set('view engine', 'html');
 
 // ワンタイムトークン用にハッシュ生成
 var salt = bcrypt.genSaltSync(10);
-var hash = bcrypt.hashSync(Math.random().toString(), salt);
+var hash = bcrypt.hashSync(Math.random().toString(), salt).replace(/\//g, '*');
 
 app.get('/', function(req, res) {
 	var sess = req.session;
@@ -50,7 +50,6 @@ app.get('/', function(req, res) {
 			if (process.env.NODE_ENV === 'test') {
 				res.end(hash);
 			} else {
-
 				res.render('onetime', {
 					title: 'ONETIME PASSWORD',
 					onetime: {
@@ -63,6 +62,9 @@ app.get('/', function(req, res) {
 });
 
 app.get('/demo/', function(req, res) {
+	if (process.env.NODE_ENV === 'test') {
+		res.end('demo');
+	}
 	// トークン認証しないとダメよ
 	res.redirect('/');
 });

@@ -66,7 +66,7 @@ describe('demo', function() {
 			request
 				.get('/demo')
 				.end(function(err, res) {
-					res.header['location'].should.containEql('/');
+					res.text.should.be.exactly('demo');
 					done();
 				});
 		});
